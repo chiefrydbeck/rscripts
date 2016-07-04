@@ -5,9 +5,28 @@ library(ape)
 
 ##Read blast data for all 67 fishes agians PXR
 completeFishSet <- read.table(file="/Users/halfdanr/NSC/06_Service_Downstream/03_AtlanticCodChemicalDefensome/05_17Jun_2016/completeSet/completeSet.txt", header=TRUE, sep="\t", row.names = 1)#, row.names = 1
+##format
+###################################
+#1	2	3	4	5	6	7	8	9  ...
+#fish_01	0	0	0	0	0	0	0	0  ...
+#fish_02	0	0	0	0	0	0	0	0  ...
+#fish_03	0	0	0	0	0	0	0	0  ...
+#.
+#.
+#.
+###################################
 
 ##read in name key between CEES specific latin ´, american and norwegain names etc
 fishNamesCompleteSet <- read.table(file="/Users/halfdanr/NSC/06_Service_Downstream/03_AtlanticCodChemicalDefensome/05_17Jun_2016/completeSet/fishNames_3_completeSet.txt", header=TRUE, sep="\t")#, row.names = 1
+
+##format
+###################################
+#Library	Order	Family	Species	Common name	Norwegian name
+#fish_1	Gadiformes	Gadidae	Arctogadus glacialis	Arctic cod	Arktisk torsk
+#fish_2	Gadiformes	Gadidae	Boreogadus saida	Polar cod	Polartorsk
+#fish_3	Gadiformes	Gadidae	Trisopterus minutus	Poor cod	Sypike
+#fish_4	Gadiformes	Gadidae	Pollachius virens	Saithe	Sei
+###################################
 
 ##create color vector for heatmap
 rgb.paletteYellowGreen <- colorRampPalette(c("grey25", "green"), space = "rgb") 
